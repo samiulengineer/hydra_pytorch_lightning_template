@@ -1,13 +1,16 @@
-defaults:
-  - model: dncnn_small
-  - data: test_dummy_mnist
-pl_trainer:
-  max_epochs: 20
-  gpus: 1
-  val_check_interval: 300
+# find more about defaul value in https://hydra.cc/docs/tutorials/basic/your_first_app/defaults
+# find structure about yaml file https://www.youtube.com/watch?v=cdLNKUoMc6c
+# definig the defaults . Default values are run automatacily if we don't pass any argrument in command line 
+defaults:                                                                           # class/object/ list name (mainly in this section this is a spacial verialble that contain list of 2 value model and data )
+  - model: dncnn_small                                                              # list value - containing the cfg.model(config/model) which is a folder pointing toword dncnn_small.ymal(hryda allow to accaess a folder but basic yaml don't allow folder)
+  - data: test_dummy_mnist                                                          # list value - containing the cfg.data(config/data) which is a folder pointing toword dncnn_small.ymal
+pl_trainer: # class name 
+  max_epochs: 20                                                                    # class  veriable                                                             
+  gpus: 1                                                                           # class  veriable 
+  val_check_interval: 300                                                           # class  veriable 
   limit_val_batches: 5  # only do validation check on 5 batches
-seed: 1234
+seed: 1234                                                                          # simple veriable 
 processing_dir: './processing/train'
 hydra:
   run:
-    dir: ${processing_dir}
+    dir: ${processing_dir}                                                         #'./processing/train'
