@@ -1,6 +1,15 @@
 # @package _group_
-_target_: model.dncnn.DnCNN
-lr: 0.0003
-channels: 1
-num_features: 64 
-num_layers: 7
+_target_: model.dncnn.DnCNN     # __target__ is a one of the spacial feature of hydra .. That allow user to call any class and also run any function 
+                                #model= is the folder name , dncnn = is the file name , CnCNN =is the class name 
+
+#all the value  below are the value of the constructor of DnCNN class 
+lr: 0.0003                      #learning rate 
+channels: 1                     # beacause mnist is a black and white image dataset 
+num_features: 64                # input 
+num_layers: 7                   # number of layer in the model 
+
+
+
+                                #find more about the __target__ in :https: //hydra.cc/docs/next/advanced/instantiate_objects/overview/
+                                #instantiate("__target__") create an instance of __targert__ class (only if we provide an class ) 
+
