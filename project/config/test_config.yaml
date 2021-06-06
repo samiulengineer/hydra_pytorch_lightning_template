@@ -3,14 +3,18 @@
 # find structure about yaml file https://www.youtube.com/watch?v=cdLNKUoMc6c
 # definig the defaults . Default values are run automatacily if we don't pass any argrument in command line 
 # hydra allow you to nested one yaml file from other yaml file mainly nasting is happanig in default section 
-# in this section nesting is used 
+# in this section nesting is used
+
+
 defaults:                           # class/object/ list name (mainly in this section this is a spacial verialble that contain list of 2 value model and data )
   - model: dncnn_small              # list value - containing the cfg.model(config/model) which is a folder pointing toword dncnn_small.ymal(hryda allow to accaess a folder but basic yaml don't allow folder)
-  - data: train_dummy_mnist         # list value - containing the cfg.data(config/data) which is a folder pointing toword dncnn_small.ymal
+  - data: test_dummy_mnist         # list value - containing the cfg.data(config/data) which is a folder pointing toword dncnn_small.ymal
+
 pl_trainer:                         # class / object name 
   gpus: 1
                          # class /object  veriable 
 seed: 1234                          # simple veriable not under any class
+
 processing_dir: './processing/test' # simple veriable not under any class 
 checkpoint_path: ~                  # placeholder for pretrained checkpoint
 hydra:

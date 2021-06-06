@@ -25,7 +25,7 @@ conda env create -n mlseed -f ./envs/conda_env.yml
 conda activate mlseed
 cd project
 ```
-
+ 
 ### Training
 
 Train with predefined configs - model: **dncnn_small** and data: **train_dummy_mnist**
@@ -76,6 +76,6 @@ python test.py \
     model.num_layers=5 \
     data=test_dummy_mnist \
     +pl_trainer.deterministic=True \
-    checkpoint_path=$PWD'/processing/train/dncnn_mid_mnist/lightning_logs/version_0/checkpoints/epoch\=19-step\=8450.ckpt' \
+    checkpoint_path=$PWD'/processing/train/dncnn_mid_mnist/lightning_logs/version_0/checkpoints/epoch=19-step=8450.ckpt' \
     processing_dir='./processing/test/dncnn_mid_mnist/' \
 ```
